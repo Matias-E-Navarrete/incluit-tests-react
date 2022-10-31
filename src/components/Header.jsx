@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import '../styles/components/Header.styl';
 
 const Header = props => (
-    <div className="Header">
-        <h1 className="Header-title">
+    <div className="Header" data-testid="header-component">
+        <h1 className="Header-title" title='header-title'>
             <Link to="/">
                 Incluit Course
             </Link>
