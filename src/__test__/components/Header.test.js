@@ -4,14 +4,14 @@ import ProviderMock from '../../__mocks__/Provider/ProviderMock'
 import Header from '../../components/Header'
 
 describe('<Header/>', function () {
-    // Arrange.
-    render(
-        <ProviderMock>
-            <Header />
-        </ProviderMock>
-    )
-
     test('Should be render Header in the document', () => {
+        // Arrange.
+        render(
+            <ProviderMock>
+                <Header/>
+            </ProviderMock>
+        )
+
         // Act.
         const header = screen.getByTestId('header-component')
 
@@ -19,7 +19,14 @@ describe('<Header/>', function () {
         expect(header).toBeInTheDocument()
     })
 
-    test('Should be render header title', ()=>{
+    test('Should be render header title', () => {
+        // Arrange.
+        render(
+            <ProviderMock>
+                <Header/>
+            </ProviderMock>
+        )
+
         // Act.
         const headerTitle = screen.getByTitle('header-title')
 
@@ -27,8 +34,13 @@ describe('<Header/>', function () {
         expect(headerTitle).toBeInTheDocument(headerTitle)
     })
 
-    test('Should be render "Incluit Course"', ()=>{
+    test('Should be render "Incluit Course"', () => {
         // Arrange.
+        render(
+            <ProviderMock>
+                <Header/>
+            </ProviderMock>
+        )
         const text = "Incluit Course"
 
         // Act.
