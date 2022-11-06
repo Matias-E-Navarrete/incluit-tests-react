@@ -2,6 +2,7 @@ import React from 'react'
 import {render, screen} from '@testing-library/react'
 import ProviderMock from '../../__mocks__/Provider/ProviderMock'
 import Header from '../../components/Header'
+import {initialStateWithCart} from "../../__mocks__/Provider/states";
 
 describe('<Header/>', function () {
     test('Should be render Header in the document', () => {
@@ -17,6 +18,21 @@ describe('<Header/>', function () {
 
         // Assert.
         expect(header).toBeInTheDocument()
+    })
+
+    test('Should be render Header alert with cart', () => {
+        // Arrange.
+        render(
+            <ProviderMock state={initialStateWithCart}>
+                <Header />
+            </ProviderMock>
+        )
+
+        // Act.
+        const alert = screen.getByTestId('alert-with-cart')
+
+        // Assert.
+        expect(alert).toBeInTheDocument()
     })
 
     test('Should be render header title', () => {

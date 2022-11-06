@@ -16,7 +16,7 @@ const Header = props => (
             </Link>
             {
                 props.cart.length > 0
-                    ? <div className="Header-alert">{props.cart.length}</div>
+                    ? <div className="Header-alert" data-testid="alert-with-cart">{props.cart.length}</div>
                     : <div className="Header-alert">0</div>
             }
         </div>

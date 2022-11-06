@@ -6,15 +6,20 @@ import {createBrowserHistory} from 'history'
 import initialState from '../../store/initialState'
 import reducer from '../../store/reducers'
 
-const myStore = createStore(reducer, initialState)
-const history = createBrowserHistory()
 
-const ProviderMock = props => (
-    <Provider store={myStore}>
-        <Router history={history}>
-            {props.children}
-        </Router>
-    </Provider>
-)
+const ProviderMock = props => {
+    const history = createBrowserHistory()
+    const state = props.state ? props.state : initialState
+    const myStore = createStore(reducer, state)
+
+    return (
+        <Provider store={myStore}>
+            <Router history={history}>
+                {props.children}
+            </Router>
+        </Provider>
+    )
+}
+
 
 export default ProviderMock
