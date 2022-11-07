@@ -8,7 +8,7 @@ describe('<Footer />', () => {
     // Arrange.
     render(<Footer />)
     // Act.
-    const footer = screen.getByText('footer-div')
+    const footer = screen.getByTestId('footer-div')
     screen.debug()
 
     // Assert.
